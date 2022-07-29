@@ -2,11 +2,11 @@
 // Created by kalo3 on 27-Jul-22.
 //
 
-#include "ChebishevDistance.hpp"
+#include "ChebyshevDistance.hpp"
 #include "math.h"
 using namespace Geometry;
 
-double ChebishevDistance::distance(Point p1, Point p2) {
+double ChebyshevDistance::distance(Point p1, Point p2) {
     int dimension=p1.dimension();
     double maxDifference=-1;
     for(int i=0;i<dimension;i++){

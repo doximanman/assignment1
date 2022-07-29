@@ -67,14 +67,14 @@ build CMakeFiles/assignment1.dir/Distance.cpp.obj: CXX_COMPILER__assignment1_Deb
   OBJECT_DIR = CMakeFiles\assignment1.dir
   OBJECT_FILE_DIR = CMakeFiles\assignment1.dir
 
-build CMakeFiles/assignment1.dir/EuclidianDistance.cpp.obj: CXX_COMPILER__assignment1_Debug D$:/doxiMAN_MAN/Miscellaneous/homework/tashpav$ summer/advanced$ prog$ 1/assignment1/EuclidianDistance.cpp || cmake_object_order_depends_target_assignment1
-  DEP_FILE = CMakeFiles\assignment1.dir\EuclidianDistance.cpp.obj.d
+build CMakeFiles/assignment1.dir/EuclideanDistance.cpp.obj: CXX_COMPILER__assignment1_Debug D$:/doxiMAN_MAN/Miscellaneous/homework/tashpav$ summer/advanced$ prog$ 1/assignment1/EuclideanDistance.cpp || cmake_object_order_depends_target_assignment1
+  DEP_FILE = CMakeFiles\assignment1.dir\EuclideanDistance.cpp.obj.d
   FLAGS = -g -std=gnu++11
   OBJECT_DIR = CMakeFiles\assignment1.dir
   OBJECT_FILE_DIR = CMakeFiles\assignment1.dir
 
-build CMakeFiles/assignment1.dir/ChebishevDistance.cpp.obj: CXX_COMPILER__assignment1_Debug D$:/doxiMAN_MAN/Miscellaneous/homework/tashpav$ summer/advanced$ prog$ 1/assignment1/ChebishevDistance.cpp || cmake_object_order_depends_target_assignment1
-  DEP_FILE = CMakeFiles\assignment1.dir\ChebishevDistance.cpp.obj.d
+build CMakeFiles/assignment1.dir/ChebyshevDistance.cpp.obj: CXX_COMPILER__assignment1_Debug D$:/doxiMAN_MAN/Miscellaneous/homework/tashpav$ summer/advanced$ prog$ 1/assignment1/ChebyshevDistance.cpp || cmake_object_order_depends_target_assignment1
+  DEP_FILE = CMakeFiles\assignment1.dir\ChebyshevDistance.cpp.obj.d
   FLAGS = -g -std=gnu++11
   OBJECT_DIR = CMakeFiles\assignment1.dir
   OBJECT_FILE_DIR = CMakeFiles\assignment1.dir
@@ -99,7 +99,7 @@ build CMakeFiles/assignment1.dir/KNearestNeighbors.cpp.obj: CXX_COMPILER__assign
 #############################################
 # Link the executable assignment1.exe
 
-build assignment1.exe: CXX_EXECUTABLE_LINKER__assignment1_Debug CMakeFiles/assignment1.dir/main.cpp.obj CMakeFiles/assignment1.dir/Point.cpp.obj CMakeFiles/assignment1.dir/Distance.cpp.obj CMakeFiles/assignment1.dir/EuclidianDistance.cpp.obj CMakeFiles/assignment1.dir/ChebishevDistance.cpp.obj CMakeFiles/assignment1.dir/ManhattanDistance.cpp.obj CMakeFiles/assignment1.dir/KNearestNeighbors.cpp.obj
+build assignment1.exe: CXX_EXECUTABLE_LINKER__assignment1_Debug CMakeFiles/assignment1.dir/main.cpp.obj CMakeFiles/assignment1.dir/Point.cpp.obj CMakeFiles/assignment1.dir/Distance.cpp.obj CMakeFiles/assignment1.dir/EuclideanDistance.cpp.obj CMakeFiles/assignment1.dir/ChebyshevDistance.cpp.obj CMakeFiles/assignment1.dir/ManhattanDistance.cpp.obj CMakeFiles/assignment1.dir/KNearestNeighbors.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\assignment1.dir

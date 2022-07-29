@@ -1,10 +1,10 @@
 # ninja log v5
-2	90	6808040532512752	build.ninja	754fc16aed5bdcd
+2	90	6808061274597100	build.ninja	754fc16aed5bdcd
 2	211	6808040211662065	CMakeFiles/assignment1.dir/EuclidianDistance.cpp.obj	618b403a6a518454
 0	212	6808040211662065	CMakeFiles/assignment1.dir/Distance.cpp.obj	3e9b7b78d1ae8dba
+2	280	6808040590175344	CMakeFiles/assignment1.dir/KNearestNeighbors.cpp.obj	d32376e8226c5c8c
 7	224	6808040211801130	CMakeFiles/assignment1.dir/ChebishevDistance.cpp.obj	cf0dec990076d21f
 3	227	6808040211825965	CMakeFiles/assignment1.dir/Point.cpp.obj	9cfa45be513bf35e
 6	225	6808040211801130	CMakeFiles/assignment1.dir/ManhattanDistance.cpp.obj	1b686104b5295399
 4	271	6808040212263033	CMakeFiles/assignment1.dir/main.cpp.obj	6581e6ea3ecb07ff
-2	280	6808040590175344	CMakeFiles/assignment1.dir/KNearestNeighbors.cpp.obj	d32376e8226c5c8c
 281	355	6808040590910412	assignment1.exe	e36e35763dfd501

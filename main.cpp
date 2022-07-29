@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Point.hpp"
-#include "EuclidianDistance.hpp"
-#include "ChebishevDistance.hpp"
+#include "EuclideanDistance.hpp"
+#include "ChebyshevDistance.hpp"
 #include "ManhattanDistance.hpp"
 #include "KNearestNeighbors.hpp"
 using namespace std;
@@ -30,9 +30,9 @@ int main() {
     vector<Point> type2={t1p0,t1p1,t1p2,t1p3,t1p4};
     vector<Point> type3={t2p0,t2p1,t2p2,t2p3,t2p4,t2p5,t2p6,t2p7,t2p8};
     vector<vector<Point>> data{type1, type2, type3};
-    EuclidianDistance euclid{};
+    EuclideanDistance euclid{};
     ManhattanDistance manhat{};
-    ChebishevDistance chebish{};
+    ChebyshevDistance chebish{};
     std::cout << euclid.distance(t1p1, t1p3) << endl;
     std::cout << manhat.distance(t1p1, t1p3) << endl;
     std::cout << chebish.distance(t1p1, t1p3) << endl;
@@ -42,14 +42,14 @@ int main() {
     std::cout << nearestNeighbors.distances(manhat).at(0).at(0) << endl;
     std::cout << nearestNeighbors.distances(chebish).at(0).at(0) << endl;
     int K=5;
-    cout << "Euclidian K nearest neighbors: " ;
+    cout << "Euclidean K nearest neighbors: " ;
     nearestNeighbors.printNearestNeighbors(K,euclid);
     cout << "Manhattan K nearest neighbors: ";
     nearestNeighbors.printNearestNeighbors(K,manhat);
-    cout << "Chebishev K nearest neighbors: ";
+    cout << "Chebyshev K nearest neighbors: ";
     nearestNeighbors.printNearestNeighbors(K,chebish);
-    cout << "Euclidian Classification: " << nearestNeighbors.classify(K,euclid) << endl;
+    cout << "Euclidean Classification: " << nearestNeighbors.classify(K,euclid) << endl;
     cout << "Manhattan Classification: " << nearestNeighbors.classify(K,manhat) << endl;
-    cout << "Chebishev Classification: " << nearestNeighbors.classify(K,chebish) << endl;
+    cout << "Chebyshev Classification: " << nearestNeighbors.classify(K,chebish) << endl;
 
 }

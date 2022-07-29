@@ -2,13 +2,13 @@
 // Created by kalo3 on 27-Jul-22.
 //
 
-#include "EuclidianDistance.hpp"
+#include "EuclideanDistance.hpp"
 #include "Distance.hpp"
 #include "math.h"
 
 using namespace Geometry;
 
-double EuclidianDistance::distance(Point p1, Point p2) {
+double EuclideanDistance::distance(Point p1, Point p2) {
     int dimension = p1.dimension();
     double sumOfSquares = 0;
     for (int i = 0; i < dimension; i++) {

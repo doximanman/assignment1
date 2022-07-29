@@ -6,8 +6,11 @@
 #define ASS1_CHEBISHEVDISTANCE_HPP
 #include "Distance.hpp"
 namespace Geometry {
-    class ChebishevDistance : public Distance {
+    class ChebyshevDistance : public Distance {
         public:
+        /**
+         * @return Chebyshev distance - maximum difference between the coordinates of the points.
+         */
             double distance(Point p1, Point p2);
     };
 }

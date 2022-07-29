@@ -9,6 +9,10 @@
 #include "vector"
 using namespace std;
 namespace Geometry {
+    /**
+     * General, any dimensional spacial point - holds a set of coordinates and can provide
+     * any of them at will.
+     */
     class Point {
     private:
         /**
