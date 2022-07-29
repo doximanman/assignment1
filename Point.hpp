@@ -19,18 +19,17 @@ namespace Geometry {
          * vector of doubles instead of *double,
          * easier to work with and manage.
          */
-        vector<double> _coordinates;
-        int dim;
+        const vector<double> _coordinates;
     public:
         /**
-         * @return the dimension of the point (number of coordinates).
+         * the dimension of the point (number of coordinates).
          */
-        int dimension() const;
+        const int dimension;
         /**
          * constructor
          * @param coordinates given coordinates
          */
-        Point(vector<double> coordinates);
+        Point(const vector<double>& coordinates);
         /**
          * copy constructor
          * @param other point to copy from.
