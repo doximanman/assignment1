@@ -14,9 +14,13 @@ of the point by the type that has the most points out of those K points.
 
 ## Example
 We have a set of points, lets say (1,1) (2,2) (3,3) (4,4) and (3.5,3.5), and they are classified:
+
 group A: (1,1) , (2,2) , (3,3)
+
 group B: (4,4) , (3.5,3.5)
+
 And we are given the unclassified point (2.5,2.5), and 'accuracy' - K=3, and we need to classify the point.
+
 Using Manhattan distance, the 3 closest points are : (2,2),(3,3),(3.5,3.5). 2 of those points belong to group A,
 and 1 belongs to group B, so we conclude that the point should belong to group A.
 
