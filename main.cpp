@@ -4,9 +4,17 @@
 #include "ChebyshevDistance.hpp"
 #include "ManhattanDistance.hpp"
 #include "KNearestNeighbors.hpp"
+#include <string>
 using namespace std;
 using namespace Geometry;
-int main() {
+int main(int argc,char* argv[]) {
+    int K=3;
+    if(argc>1){
+        K=stoi(argv[1]);
+    }
+    else{
+        cout<<"No argument given - assuming K=3"<<endl;
+    }
     Point t0p0({3, 3});
     Point t0p1({1, 2});
     Point t0p2({3, 1});
@@ -33,15 +41,23 @@ int main() {
     EuclideanDistance euclid{};
     ManhattanDistance manhat{};
     ChebyshevDistance chebish{};
-    std::cout << euclid.distance(t1p1, t1p3) << endl;
-    std::cout << manhat.distance(t1p1, t1p3) << endl;
-    std::cout << chebish.distance(t1p1, t1p3) << endl;
+    cout<< "Distances of " << t1p1 << " from " << t2p2 << ":" << endl;
+    cout<< "Euclidean: ";
+    cout << euclid.distance(t1p1, t1p3) << " | ";
+    cout<< "Manhattan: ";
+    cout << manhat.distance(t1p1, t1p3) << " | ";
+    cout << "Chebyshev: ";
+    cout << chebish.distance(t1p1, t1p3) << endl;
     Point modelPoint({3, 3});
     KNearestNeighbors nearestNeighbors(modelPoint, data);
-    std::cout << nearestNeighbors.distances(euclid).at(0).at(0) << endl;
-    std::cout << nearestNeighbors.distances(manhat).at(0).at(0) << endl;
-    std::cout << nearestNeighbors.distances(chebish).at(0).at(0) << endl;
-    int K=5;
+    cout<< "Distances of " << t0p0 << " from " << modelPoint << ", using the data table";
+    cout << " inside of the nearestNeighbor object: " << endl;
+    cout<< "Euclidean: ";
+    cout << nearestNeighbors.distances(euclid).at(0).at(0) << " | ";
+    cout<< "Manhattan: ";
+    cout << nearestNeighbors.distances(manhat).at(0).at(0) << " | ";
+    cout << "Chebyshev: ";
+    cout << nearestNeighbors.distances(chebish).at(0).at(0) << endl;
     cout << "Euclidean K nearest neighbors: " ;
     nearestNeighbors.printNearestNeighbors(K,euclid);
     cout << "Manhattan K nearest neighbors: ";
