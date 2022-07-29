@@ -33,9 +33,9 @@ and 1 belongs to group B, so we conclude that the point should belong to group A
 - Has an abstract distance function (not implemented).
 - Whenever a distance function is needed in the code, an abstract refrence to the Distance class is used, to uphold generality.
 
-**KNearestNeighbors class** - Constructed with a data table and a model point. has 3 main functions:
+**KNearestNeighbors class**:
 - Constructed with a data table and a model point.
-- Has several functions:
+- Has 3 main functions:
 - **distances(instance of Distance)**: returns a table of all the distances of the data points from the model point, given a distance function.
   **logic**: Simply creates a new table, iterates over the data table and inserts the distances of each point to the model point.
 - **NearestNeighbors(integer K, instance of Distance)**: returns a list of the K nearest neighbors
