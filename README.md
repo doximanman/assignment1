@@ -1,7 +1,7 @@
-#K Nearest Neighbors
+# K Nearest Neighbors
 
 This project is coded in C++.
-##The Problem
+## The Problem
 We have a set of points (data), and each point belongs to some group (**Classified**).
 Given a new point that is not classified, we need to decide which group that point should belong to.
 There are different ways to do this, but one way is to use the **K Nearest Neighbors** algorithm.
@@ -12,7 +12,7 @@ of the point by the type that has the most points out of those K points.
 
 <sup>(1)</sup> Closest is relative to a given distance function. In this algorithm we generalized it so that any distance function would work - and in our example we used 3 distances: Euclidian, Manhattan, and Chebyshev.
 
-##Example
+## Example
 We have a set of points, lets say (1,1) (2,2) (3,3) (4,4) and (3.5,3.5), and they are classified:
 group A: (1,1) , (2,2) , (3,3)
 group B: (4,4) , (3.5,3.5)
@@ -20,7 +20,7 @@ And we are given the unclassified point (2.5,2.5), and 'accuracy' - K=3, and we 
 Using Manhattan distance, the 3 closest points are : (2,2),(3,3),(3.5,3.5). 2 of those points belong to group A,
 and 1 belongs to group B, so we conclude that the point should belong to group A.
 
-##How we implemented it
+## How we implemented it
 **generic point class**:
 - Can be of any dimension, with a given coordinates list.
 - Can return any of its coordinates at will using the **at** function.
@@ -41,7 +41,7 @@ and 1 belongs to group B, so we conclude that the point should belong to group A
 
 We also created extenders of the Distance class, specifically Euclidian distance, Manhattan distance, and Chebyshev distance.
 
-##How to Use
+## How to Use
 For now, insert some K into the command line arguments when running main.cpp, and you'll get 
 an output of some testing code (explaination in the output of the code).
 And there are comments throughout the code, wherever explanation may be needed.
