@@ -1,4 +1,5 @@
 #K Nearest Neighbors
+
 This project is coded in C++.
 ##The Problem
 We have a set of points (data), and each point belongs to some group (**Classified**).
