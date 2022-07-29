@@ -6,7 +6,7 @@ We have a set of points (data), and each point belongs to some group (**Classifi
 Given a new point that is not classified, we need to decide which group that point should belong to.
 There are different ways to do this, but one way is to use the **K Nearest Neighbors** algorithm.
 ## What is the K Nearest Neighbors Algorithm?
-Given a group of classified points - our **data**, a number K - our **'accurary'**, and a new point -  we need to classify that point.
+Given a group of classified points - our **data**, a number K - our **'accuracy'**, and a new point -  we need to classify that point.
 This algorithm solves this problem by finding the K closest<sup>(1)</sup> points in the data from the point, and it decides the classification
 of the point by the type that has the most points out of those K points.
 
