@@ -1,6 +1,6 @@
 # K Nearest Neighbors
 
-This project is coded in C++.
+This project is coded in C++.עע
 ## The Problem
 We have a set of points (data), and each point belongs to some group (**Classified**).
 Given a new point that is not classified, we need to decide which group that point should belong to.
