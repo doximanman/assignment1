@@ -59,7 +59,8 @@ vector<int[2]> KNearestNeighbors::firstK(int K, Distance &distance) {
         for (int i = 0; i < dists.size(); i++) {
             for (int j = 0; j < dists.at(i).size(); j++) {
                 // if(distance is smaller than the minimum we found && we didn't find this point before as a minimum)
-                if (dists.at(i).at(j) < min && (!contains(&result, new int[2]{i,j}))) {
+                int thisPosition[2]={i,j};
+                if (dists.at(i).at(j) < min && (!contains(&result, thisPosition))) {
                     // save the indices and minimum as the new minimum.
                     indices[0] = i;
                     indices[1] = j;
