@@ -3,7 +3,6 @@
 //
 
 #include <cstdlib>
-#include <utility>
 #include "KNearestNeighbors.hpp"
 #include <iostream>
 
@@ -55,12 +54,12 @@ vector<int[2]> KNearestNeighbors::firstK(int K, Distance &distance) {
     // and not just the smallest element K times).
     for (int r = 0; r < K; r++) {
         // initialized at infinity so that we're guaranteed to have a number smaller than it.
-        double min = LONG_MAX;
+        double min = 2147483647L;
         int indices[2] = {-1, -1};
         for (int i = 0; i < dists.size(); i++) {
             for (int j = 0; j < dists.at(i).size(); j++) {
                 // if(distance is smaller than the minimum we found && we didn't find this point before as a minimum)
-                if (dists.at(i).at(j) < min && (!contains(&result, new int[]{i, j}))) {
+                if (dists.at(i).at(j) < min && (!contains(&result, new int[2]{i,j}))) {
                     // save the indices and minimum as the new minimum.
                     indices[0] = i;
                     indices[1] = j;

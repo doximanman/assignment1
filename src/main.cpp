@@ -17,7 +17,7 @@ using namespace CSV;
  * The classification of each flower is determined using the k nearest neighbors algorithm.
  * @param k  the k value of the K nearest neighbors algorithm.
  * @param distance the distance to use the algorithm with.
- * @returnstrings vector contains the string representations of the classification of
+ * @return strings vector contains the string representations of the classification of
  * each unclassified flower.
  */
 vector<string> classifyData(int k, Geometry::Distance &distance, const vector<vector<Geometry::Point>> &classifiedData,
