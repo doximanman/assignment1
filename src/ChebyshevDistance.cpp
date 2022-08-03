@@ -3,7 +3,6 @@
 //
 
 #include "ChebyshevDistance.hpp"
-#include "math.h"
 using namespace Geometry;
 
 double ChebyshevDistance::distance(Point p1, Point p2) {

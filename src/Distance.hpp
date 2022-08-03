@@ -19,6 +19,11 @@ namespace Geometry {
          * @return The distance between the points.
          */
         virtual double distance(Point p1,Point p2)=0;
+        /**
+         * @param x
+         * @return absolute value of x.
+         */
+        static double absoluteValue(double x);
     };
 }
 #endif //ASS1_DISTANCE_HPP
