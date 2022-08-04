@@ -73,6 +73,7 @@ We also created extenders of the Distance class, specifically Euclidian distance
 
 ## How to Use
 choose some positive integer K, and run the commands (with the number instead of K):
+
 ```
 g++ -std=c++11 src/*.cpp 
 ./a.out K
