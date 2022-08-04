@@ -48,7 +48,34 @@ and 1 belongs to group B, so we conclude that the point should belong to group A
 
 We also created extenders of the Distance class, specifically Euclidian distance, Manhattan distance, and Chebyshev distance.
 
+**CSVManagement class**:
+- Costructed with 3 strings representing the directories to classified.csv file, Unclassified.csv file and output folder respectively.
+- Has 3 main functions:
+- **createDataVector**: Returns a vector with the data stored in the csv file at the given path.
+
+  **logic**: Opens the file in the given path, scan its lines and insert them into a string vector.
+- **createClassifiedData**: Creates the classified data out of the given classified.csv file.
+
+  **logic**: Scans the data table created by the classified.csv file line by line (using the function above) and inserts the coordinates of each line into a Points vector according to the Iris type name.
+- **createUnclassifiedData**:  Creates the unclassified data out of the given Unclassified.csv file.
+
+  **logic**: Scans the data table created by the Unclassified.csv file line by line and inserst the coordinates of each line into a Points vecotr.
+- **createCSVOutputFile**: Writes the strings of a given string vector into a file named with the given fileOutputName.
+
+  **logic**: Opens a file with the give name, scans the lines of the given vector and writes it into the new file.
+
+**main class**:
+- Contains 2 functions:
+- **classifyData**: Returns a strings vector contains the string classification representations of each unclassified Iris stored in the unclassifiedData, according to the given k value and desired distance.
+
+  **logic**: Scans all the Points represrents the coordinates of each unclassified Iris. For each Point, we activate the K nearest neighbors algorithm with the given k value and distance fotmula desired in order to classify the Iris type. Finally, the function inserts each Iris string classification into a string vector (by the order they were scanned) and returns this vector at the end.
+- **main**: Creates 3 csv files with the classifications of the unclassified Irises accepted, one for each distance formula implemented: euclidean, chebyshev and manhattan distances.
+
 ## How to Use
-For now, insert some K into the command line arguments when running main.cpp, and you'll get 
-an output of some testing code (explaination in the output of the code).
-And there are comments throughout the code, wherever explanation may be needed.
+Insert some (positive) integer K into the command line arguments when running main.cpp and 3 csv files would be created in the outputFiles folder (at the project directory):
+
+*euclidean_output.csv* which contains string classification representation of each unclassified Iris using the K nearest neighbors algorithm with the given K integer and using euclidean distance.
+
+*chebyshev_output.csv* which contains string classification representation of each unclassified Iris using the K nearest neighbors algorithm with the given K integer and using chebyshev distance.
+
+*manhattan_output.csv* which contains string classification representation of each unclassified Iris using the K nearest neighbors algorithm with the given K integer and using manhattan distance.
