@@ -3,8 +3,10 @@
 //
 
 #include <cstdlib>
+#include <utility>
 #include "KNearestNeighbors.hpp"
 #include <iostream>
+#include <array>
 
 using namespace Geometry;
 KNearestNeighbors::KNearestNeighbors(const Point& modelPoint,
@@ -31,20 +33,20 @@ vector<vector<double>> KNearestNeighbors::distances(Distance &distance) {
     return dists;
 }
 
-bool KNearestNeighbors::contains(vector<int[2]> *list, const int value[2]) {
-    for (auto &item: *list) {
-        if (item[0] == value[0] && item[1] == value[1]) {
+bool KNearestNeighbors::contains(vector<array<int,2>> list, int val1, int val2) {
+    for (auto &item: list) {
+        if (item[0] == val1 && item[1] == val2) {
             return true;
         }
     }
     return false;
 }
 
-vector<int[2]> KNearestNeighbors::firstK(int K, Distance &distance) {
+vector<array<int,2>> KNearestNeighbors::firstK(int K, Distance &distance) {
     if(K>numOfPoints){
         K=numOfPoints;
     }
-    vector<int[2]> result(K);
+    vector<array<int,2>> result(K);
     for(auto item : result){
         item[0]=-1;
         item[1]=-1;
@@ -54,23 +56,23 @@ vector<int[2]> KNearestNeighbors::firstK(int K, Distance &distance) {
     // and not just the smallest element K times).
     for (int r = 0; r < K; r++) {
         // initialized at infinity so that we're guaranteed to have a number smaller than it.
-        double min = 2147483647L;
-        int indices[2] = {-1, -1};
+        double min = 0x7fffffffL;
+        int index1=-1;
+        int index2=-1;
         for (int i = 0; i < dists.size(); i++) {
             for (int j = 0; j < dists.at(i).size(); j++) {
                 // if(distance is smaller than the minimum we found && we didn't find this point before as a minimum)
-                int thisPosition[2]={i,j};
-                if (dists.at(i).at(j) < min && (!contains(&result, thisPosition))) {
+                if (dists.at(i).at(j) < min && (!contains(result, i,j))) {
                     // save the indices and minimum as the new minimum.
-                    indices[0] = i;
-                    indices[1] = j;
+                    index1 = i;
+                    index2 = j;
                     min = dists.at(i).at(j);
                 }
             }
         }
         // the indices of the new minimum.
-        result.at(r)[0] = indices[0];
-        result.at(r)[1] = indices[1];
+        result.at(r)[0] = index1;
+        result.at(r)[1] = index2;
     }
     return result;
 }
@@ -78,7 +80,7 @@ vector<int[2]> KNearestNeighbors::firstK(int K, Distance &distance) {
 vector<Point> KNearestNeighbors::nearestNeighbors(int K, Distance &distance) {
     // simply gets the indices of the nearest neighbors and returns a list of the actual points.
     vector<Point> neighbors={};
-    vector<int[2]> indices = firstK(K, distance);
+    vector<array<int,2>> indices = firstK(K, distance);
     for (auto & index : indices) {
         neighbors.push_back(_data.at(index[0]).at(index[1]));
     }
@@ -88,7 +90,7 @@ vector<Point> KNearestNeighbors::nearestNeighbors(int K, Distance &distance) {
 int KNearestNeighbors::classify(int K, Distance &distance) {
     // uses a counter list to count how many points of the closest K points are of each
     // data type, then finds the max of that counter list, and returns the index of it.
-    vector<int[2]> neighborIndices = firstK(K, distance);
+    vector<array<int,2>> neighborIndices = firstK(K, distance);
     // counter list.
     vector<int> counter(_data.size());
     // initializes at 0.

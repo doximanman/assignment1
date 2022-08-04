@@ -16,7 +16,7 @@ namespace Geometry {
         /**
          * @return Euclidean distance - square root of the sum of the differences between the coordinates squared.
          */
-        double distance(Point p1, Point p2);
+        double distance(Point p1, Point p2) override;
     };
 }
 

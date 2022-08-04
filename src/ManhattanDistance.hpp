@@ -14,7 +14,7 @@ namespace Geometry {
         * Assumes p1 and p2 are of the same dimension.
         * @return Manhattan distance - sum of the absolute values of the differences between the points' coordinates.
         */
-        double distance(Point p1, Point p2);
+        double distance(Point p1, Point p2) override;
     };
 }
 

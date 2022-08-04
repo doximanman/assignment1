@@ -6,6 +6,7 @@
 #include "KNearestNeighbors.hpp"
 #include <string>
 #include "CSVManagement.hpp"
+#include <fstream>
 
 using namespace std;
 using namespace Geometry;
@@ -17,7 +18,7 @@ using namespace CSV;
  * The classification of each flower is determined using the k nearest neighbors algorithm.
  * @param k  the k value of the K nearest neighbors algorithm.
  * @param distance the distance to use the algorithm with.
- * @return strings vector contains the string representations of the classification of
+ * @returnstrings vector contains the string representations of the classification of
  * each unclassified flower.
  */
 vector<string> classifyData(int k, Geometry::Distance &distance, const vector<vector<Geometry::Point>> &classifiedData,
@@ -47,11 +48,10 @@ vector<string> classifyData(int k, Geometry::Distance &distance, const vector<ve
  * @return int.
  */
 int main(int argc, char *argv[]) {
-
     // create CSVManager object
-    CSVManagement csvManagement("inputFiles\\classified.csv",
-                                "inputFiles\\Unclassified.csv",
-                                "outputFiles\\");
+    CSVManagement csvManagement("inputFiles/classified.csv",
+                                "inputFiles/Unclassified.csv",
+                                "outputFiles/");
 
     // create 3 types of distances
     EuclideanDistance euclideanDistance{};
@@ -59,9 +59,7 @@ int main(int argc, char *argv[]) {
     ChebyshevDistance chebyshevDistance{};
 
     // creating classified oustput files
-    csvManagement.createCSVOutputFile(classifyData(stoi(argv[1]), euclideanDistance,
-                                                   csvManagement.getClassifiedData(),
-                                                   csvManagement.getUnclassifiedData()),
+    csvManagement.createCSVOutputFile(classifyData(stoi(argv[1]), euclideanDistance,csvManagement.getClassifiedData(),csvManagement.getUnclassifiedData()),
                                       "euclidean_output.csv");
     csvManagement.createCSVOutputFile(classifyData(stoi(argv[1]), chebyshevDistance,
                                                    csvManagement.getClassifiedData(),

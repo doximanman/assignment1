@@ -6,6 +6,7 @@
 #define ASS1_KNEARESTNEIGHBORS_HPP
 
 #include "Distance.hpp"
+#include <array>
 using namespace Geometry;
 
 class KNearestNeighbors {
@@ -20,13 +21,13 @@ private:
      * returns the indices of the K closest points to the model point.
      * @return
      */
-    vector<int[2]> firstK(int K, Distance &distance);
+    vector<array<int,2>> firstK(int K, Distance &distance);
     /**
      * @param list
      * @param value
      * @return whether value is in list.
      */
-    static bool contains(vector<int[2]> *list, const int value[2]);
+    static bool contains(vector<array<int,2>> list, int val1,int val2);
     /**
      * total number of points in the data table.
      */

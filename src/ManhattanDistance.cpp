@@ -10,7 +10,11 @@ double ManhattanDistance::distance(Point p1, Point p2) {
     int dimension=p1.dimension;
     double sum=0;
     for(int i=0;i<dimension;i++){
-        sum+=Distance::absoluteValue(p1.at(i)-p2.at(i));
+        double difference=p1.at(i)-p2.at(i);
+        if(difference<0){
+            difference*=-1;
+        }
+        sum+=difference;
     }
     return sum;
 }

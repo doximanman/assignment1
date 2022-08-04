@@ -46,26 +46,24 @@ vector<vector<string>> CSVManagement::createDataVector(const string &filePath) {
 void CSVManagement::createClassifiedData() {
     vector<vector<string>> data = createDataVector(_classifiedDataPath);
     // create the data field using the data vectors created above
-    vector<Point> setosa;
-    vector<Point> versicolor;
-    vector<Point> virginica;
+    _classifiedData.emplace_back();
+    _classifiedData.emplace_back();
+    _classifiedData.emplace_back();
+
     for (auto &i: data) {
         // iris coordinates
         Point valus({stod(i[0]), stod(i[1]), stod(i[2]),
                      stod(i[3])});
         if (i[4].find("setosa") != string::npos) {
-            setosa.push_back(valus);
+            _classifiedData.at(0).push_back(valus);
         } else if (i[4].find("versicolor") != string::npos) {
-            versicolor.push_back(valus);
+            _classifiedData.at(1).push_back(valus);
         }
             //  last option (assuming the input file is valid): data[i][4].find("virginica") != string::npos
         else {
-            virginica.push_back(valus);
+            _classifiedData.at(2).push_back(valus);
         }
     }
-    _classifiedData.push_back(setosa);
-    _classifiedData.push_back(versicolor);
-    _classifiedData.push_back(virginica);
 }
 
 void CSVManagement::createUnclassifiedData() {
