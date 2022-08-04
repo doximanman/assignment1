@@ -72,7 +72,11 @@ We also created extenders of the Distance class, specifically Euclidian distance
  - **main**: Creates 3 csv files with the classifications of the unclassified Irises accepted, one for each distance formula implemented: euclidean, chebyshev and manhattan distances.
 
 ## How to Use
-Insert some (positive) integer K into the command line arguments when running main.cpp and 3 csv files would be created in the outputFiles folder (at the project directory):
+choose some positive integer K, and run the commands (with the number instead of K):
+'''
+g++ -std=c++11 src/*.cpp 
+./a.out K
+'''
 
 *euclidean_output.csv* which contains string classification representation of each unclassified Iris using the K nearest neighbors algorithm with the given K integer and using euclidean distance.
 
